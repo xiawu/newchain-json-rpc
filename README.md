@@ -19,5 +19,5 @@ const createInfuraMiddleware = require('eth-json-rpc-infura')
 const RpcEngine = require('json-rpc-engine')
 
 const engine = new RpcEngine()
-engine.push(createInfuraMiddleware({ network: 'ropsten' }))
+engine.push(createInfuraMiddleware({ network: 'testnet' }))
 ```
