@@ -1,4 +1,4 @@
-# eth-json-rpc-infura
+# newchain-json-rpc
 
 `json-rpc-engine` middleware for newchain's REST endpoints.
 
