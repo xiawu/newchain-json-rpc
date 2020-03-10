@@ -113,7 +113,9 @@ function fetchConfigFromReq({ network, req, source }) {
   } else {
      fetchUrl = "https://global.rpc.mainnet.newtonproject.org"
   }
-  const isPostMethod = POST_METHODS.includes(method)
+  // const isPostMethod = POST_METHODS.includes(method)
+  // only support post method
+  const isPostMethod = true
   if (isPostMethod) {
     fetchParams.method = 'POST'
     fetchParams.headers = {
