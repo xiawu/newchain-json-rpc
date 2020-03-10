@@ -107,10 +107,11 @@ function fetchConfigFromReq({ network, req, source }) {
   const { method, params } = cleanReq
 
   const fetchParams = {}
+  let fetchUrl = ''
   if (network == 'testnet') {
-      let fetchUrl = "https://rpc1.newchain.newtonproject.org"
+     fetchUrl = "https://rpc1.newchain.newtonproject.org"
   } else {
-      let fetchUrl = "https://global.rpc.mainnet.newtonproject.org"
+     fetchUrl = "https://global.rpc.mainnet.newtonproject.org"
   }
   const isPostMethod = POST_METHODS.includes(method)
   if (isPostMethod) {
