@@ -140,6 +140,9 @@ function fetchConfigFromReq({ network, req, source }) {
 
 // strips out extra keys that could be rejected by strict nodes like parity
 function normalizeReq(req) {
+  if(typeof(req.id) == 'string') {
+    req.id = 1
+  }
   return {
     id: req.id,
     jsonrpc: req.jsonrpc,
