@@ -113,7 +113,9 @@ function fetchConfigFromReq({ network, req, source }) {
   } else {
      fetchUrl = "https://global.rpc.mainnet.newtonproject.org"
   }
-  const isPostMethod = POST_METHODS.includes(method)
+  // const isPostMethod = POST_METHODS.includes(method)
+  // only support post method
+  const isPostMethod = true
   if (isPostMethod) {
     fetchParams.method = 'POST'
     fetchParams.headers = {
@@ -138,6 +140,9 @@ function fetchConfigFromReq({ network, req, source }) {
 
 // strips out extra keys that could be rejected by strict nodes like parity
 function normalizeReq(req) {
+  if(typeof(req.id) == 'string') {
+    req.id = 1
+  }
   return {
     id: req.id,
     jsonrpc: req.jsonrpc,
